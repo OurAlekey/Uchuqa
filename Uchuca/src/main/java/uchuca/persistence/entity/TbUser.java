@@ -15,7 +15,7 @@ public class TbUser {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)
-    private Integer idUsuario;
+    private long idUsuario;
     @Column(name = "usu_edad", nullable = false)
     private int usuEdad;
     @Column(name = "usu_email", nullable = false)
@@ -36,11 +36,11 @@ public class TbUser {
     @Column(name = "id_tipo_usurio", nullable = false)
     private Integer idTipoUsuario;
 
-    public Integer getIdUsuario() {
+    public long getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario) {
+    public void setIdUsuario(long idUsuario) {
         this.idUsuario = idUsuario;
     }
 

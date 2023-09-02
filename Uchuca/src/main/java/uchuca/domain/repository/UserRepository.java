@@ -1,12 +1,12 @@
-package uchuca.domain.service;
+package uchuca.domain.repository;
 
 
-import uchuca.domain.dto.Usuario;
+import uchuca.domain.Usuario;
 
 import java.util.List;
 import java.util.Optional;
 
-public interface UserService {
+public interface UserRepository {
 
     public Usuario getUserByEmail (String email);
     public Optional<Usuario> getId(long id);

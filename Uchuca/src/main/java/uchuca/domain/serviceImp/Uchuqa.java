@@ -7,14 +7,14 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import uchuca.domain.dto.Usuario;
+import uchuca.domain.Usuario;
 
 import java.util.ArrayList;
 
 @Service
 public class Uchuqa implements UserDetailsService {
     @Autowired
-    UsuarioServiceImp usuarioServiceImp;
+    UsuarioService usuarioServiceImp;
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario =  usuarioServiceImp.getUserByEmail(username);

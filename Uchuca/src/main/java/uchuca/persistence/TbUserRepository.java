@@ -3,21 +3,20 @@ package uchuca.persistence;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import uchuca.domain.dto.Usuario;
-import uchuca.domain.service.UserService;
+import uchuca.domain.Usuario;
+import uchuca.persistence.crud.TbUserCrudRepository;
 import uchuca.persistence.entity.TbUser;
 import uchuca.persistence.mapper.UserMapper;
-import uchuca.persistence.repository.TbUserRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 
 @Repository
-public class UserRepository implements UserService {
+public class TbUserRepository implements uchuca.domain.repository.UserRepository {
 
     @Autowired
-    private TbUserRepository repository;
+    private TbUserCrudRepository repository;
 
     @Autowired
     private UserMapper mapper;

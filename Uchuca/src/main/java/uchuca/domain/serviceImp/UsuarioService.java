@@ -4,25 +4,28 @@ package uchuca.domain.serviceImp;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
-import uchuca.domain.dto.Usuario;
-import uchuca.domain.service.UserService;
+import uchuca.domain.Usuario;
+import uchuca.domain.repository.UserRepository;
 
 import java.util.List;
 import java.util.Optional;
 
 
 @Service
-public class UsuarioServiceImp  {
+public class UsuarioService {
     @Autowired
-    private UserService repository;
+    private UserRepository repository;
 
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     public Optional<Usuario> getId(Long id){
-        return repository.getId(id);
+
+
+            return repository.getId(id);
+
+
 
     }
-
 
 
     public Usuario save(Usuario usuario){

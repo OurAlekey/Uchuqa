@@ -5,7 +5,7 @@ import org.mapstruct.InheritInverseConfiguration;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-import uchuca.domain.dto.Usuario;
+import uchuca.domain.Usuario;
 import uchuca.persistence.entity.TbUser;
 
 import java.util.List;

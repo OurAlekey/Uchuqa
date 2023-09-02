@@ -1,11 +1,11 @@
-package uchuca.domain.dto;
+package uchuca.domain;
 
 import lombok.Data;
 
 @Data
 public class Usuario {
 
-    private  Integer id;
+    private  long id;
     private  int edad;
     private String correo;
     private String constrasena;
@@ -16,11 +16,11 @@ public class Usuario {
     private Integer idDepartamento;
     private Integer idTipoUsuario;
 
-    public Integer getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(long id) {
         this.id = id;
     }
 
