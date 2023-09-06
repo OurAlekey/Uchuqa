@@ -36,6 +36,9 @@ public class TbUser {
     @Column(name = "id_tipo_usurio", nullable = false)
     private Integer idTipoUsuario;
 
+    @Column(name = "id_sexo", nullable = false)
+    private Integer idSexo;
+
     public long getIdUsuario() {
         return idUsuario;
     }
@@ -116,5 +119,11 @@ public class TbUser {
         this.idTipoUsuario = idTipoUsuario;
     }
 
+    public Integer getIdSexo() {
+        return idSexo;
+    }
 
+    public void setIdSexo(Integer idSexo) {
+        this.idSexo = idSexo;
+    }
 }

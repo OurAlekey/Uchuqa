@@ -1,4 +1,4 @@
-package com.baay.cyberscope.baay;
+package uchuca;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

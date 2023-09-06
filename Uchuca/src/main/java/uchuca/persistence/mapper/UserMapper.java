@@ -22,7 +22,9 @@ public interface UserMapper {
             @Mapping(source = "usuPerfil",target = "perfil"),
             @Mapping(source = "usuPortada",target = "portada"),
             @Mapping(source = "idDepartamento",target = "idDepartamento"),
-            @Mapping(source = "idTipoUsuario",target = "idTipoUsuario")
+            @Mapping(source = "idTipoUsuario",target = "idTipoUsuario"),
+            @Mapping(source = "idSexo",target = "idSexo")
+
     })
     Usuario toUsuario (TbUser tbUser);
     List<Usuario> toUsuarios (List<TbUser> tbUsers);

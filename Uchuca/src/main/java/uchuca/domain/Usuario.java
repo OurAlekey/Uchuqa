@@ -16,6 +16,16 @@ public class Usuario {
     private Integer idDepartamento;
     private Integer idTipoUsuario;
 
+    private Integer idSexo;
+
+    public Integer getIdSexo() {
+        return idSexo;
+    }
+
+    public void setIdSexo(Integer idSexo) {
+        this.idSexo = idSexo;
+    }
+
     public long getId() {
         return id;
     }
