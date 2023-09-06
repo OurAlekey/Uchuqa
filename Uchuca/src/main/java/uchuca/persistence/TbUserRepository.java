@@ -4,6 +4,7 @@ package uchuca.persistence;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import uchuca.domain.Usuario;
+import uchuca.domain.repository.UserRepository;
 import uchuca.persistence.crud.TbUserCrudRepository;
 import uchuca.persistence.entity.TbUser;
 import uchuca.persistence.mapper.UserMapper;
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 
 @Repository
-public class TbUserRepository implements uchuca.domain.repository.UserRepository {
+public class TbUserRepository implements UserRepository {
 
     @Autowired
     private TbUserCrudRepository repository;
