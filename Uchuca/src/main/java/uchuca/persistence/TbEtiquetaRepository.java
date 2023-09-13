@@ -27,7 +27,7 @@ public class TbEtiquetaRepository implements EtiquetaRepository {
     @Override
     public List<Etiqueta> getAll(){
         List<TbEtiqueta> tbEtiquetas = (List<TbEtiqueta>) repository.findAll();
-        return mapper.toEtiqueta(tbEtiquetas);
+        return mapper.toEtiquetas(tbEtiquetas);
     }
 
     @Override

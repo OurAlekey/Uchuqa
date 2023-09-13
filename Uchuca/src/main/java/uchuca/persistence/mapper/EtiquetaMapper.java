@@ -13,11 +13,11 @@ import java.util.List;
 public interface EtiquetaMapper {
 
     @Mappings({
-            @Mapping(source = "idEtiqueta", target = "idEtiqueta"),
-            @Mapping(source = "etiDescripcion", target = "etiDescripcion")
+            @Mapping(source = "idEtiqueta", target = "id"),
+            @Mapping(source = "etiDescripcion", target = "descripcion")
     })
     Etiqueta toEtiqueta (TbEtiqueta tbEtiqueta);
-    List<Etiqueta> toEtiqueta (List<TbEtiqueta> tbetiqueta);
+    List<Etiqueta> toEtiquetas (List<TbEtiqueta> tbEtiquetas);
     @InheritInverseConfiguration
     TbEtiqueta toTbEtiqueta (Etiqueta etiqueta);
 }

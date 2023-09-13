@@ -5,22 +5,22 @@ import lombok.Data;
 @Data
 
 public class Etiqueta {
-    private Integer idEtiqueta;
-    private String etiDescripcion;
+    private Integer id;
+    private String descripcion;
 
-    public Integer getIdEtiqueta(){
-        return idEtiqueta;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdEtiqueta(Integer idEtiqueta){
-        this.idEtiqueta = idEtiqueta;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getEtiDescripcion(){
-        return etiDescripcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setEtiDescripcion(){
-        this.idEtiqueta = idEtiqueta;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 }
