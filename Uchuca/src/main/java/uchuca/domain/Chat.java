@@ -3,6 +3,7 @@ package uchuca.domain;
 import lombok.Data;
 
 import java.sql.Date;
+import java.sql.Timestamp;
 
 
 @Data
@@ -13,7 +14,7 @@ public class Chat {
 
     private String descripcion;
 
-    private Date fecha;
+    private Timestamp fecha;
     private Integer idProyecto;
 
     private Integer idUsuario;
@@ -36,11 +37,11 @@ public class Chat {
         this.descripcion = descripcion;
     }
 
-    public Date getFecha() {
+    public Timestamp getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(Timestamp fecha) {
         this.fecha = fecha;
     }
 
