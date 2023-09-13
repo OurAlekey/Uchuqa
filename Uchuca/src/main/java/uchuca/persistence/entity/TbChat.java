@@ -3,6 +3,7 @@ package uchuca.persistence.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Date;
 
 @Entity
 @Table(name = "tb_chat")
@@ -15,60 +16,56 @@ public class TbChat {
     @Column(name = "id_chat", nullable = false)
     private Integer idChat;
 
-    @Column(name = "chat_descripcion", nullable = false)
+    @Column(name = "cha_descripcion", nullable = false)
     private String chatDescripcion;
 
-    @Column(name = "chat_fecha", nullable = false)
-    private String chatFecha;
+    @Column(name = "cha_fecha_insercion", nullable = false)
+    private Date chatFecha;
 
-    @Column(name = "id_Proyecto",nullable = false)
+    @Column(name = "proyecto_id",nullable = false)
     private Integer idProyecto;
 
-    @Column(name = "id_Usuario", nullable = false)
+    @Column(name = "user_id", nullable = false)
     private Integer idUsuario;
 
 
-    public long getChatid() {
+    public Integer getIdChat() {
         return idChat;
     }
 
-    public void setChatId(Integer idChat){
+    public void setIdChat(Integer idChat) {
         this.idChat = idChat;
     }
 
-
-
-    public String getChatDescripcion(){
+    public String getChatDescripcion() {
         return chatDescripcion;
     }
 
-    public void setChatdescripcion(String chatDescripcion){
+    public void setChatDescripcion(String chatDescripcion) {
         this.chatDescripcion = chatDescripcion;
     }
 
-
-
-    public String getChatFecha() {
+    public Date getChatFecha() {
         return chatFecha;
     }
 
-    public void setChatFecha(String chatfecha){
-        this.chatFecha = chatfecha;
+    public void setChatFecha(Date chatFecha) {
+        this.chatFecha = chatFecha;
     }
 
-    public Integer getIdProyecto(){
+    public Integer getIdProyecto() {
         return idProyecto;
     }
 
-    public void setIdProyecto(Integer idProyecto){
+    public void setIdProyecto(Integer idProyecto) {
         this.idProyecto = idProyecto;
     }
 
-    public Integer getIdUsuario(){
+    public Integer getIdUsuario() {
         return idUsuario;
     }
 
-    public void setIdUsuario(Integer idUsuario){
+    public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
     }
 }

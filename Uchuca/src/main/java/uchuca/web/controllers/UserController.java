@@ -31,7 +31,6 @@ public class UserController {
     public Optional<Usuario>getId(@PathVariable("id") long id){
         if(service.getId(id).isEmpty()){
             throw new BussnessNotFountException("NO EXISTE EL USUARIO CON EL ID: " + id );
-
         }else{
             System.out.println("envia nuevamente");
             return service.getId(id);
