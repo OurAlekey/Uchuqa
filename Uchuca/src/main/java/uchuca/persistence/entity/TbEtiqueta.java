@@ -19,19 +19,19 @@ public class TbEtiqueta {
     @Column(name = "eti_descripcion",nullable = false)
     private String etiDescripcion;
 
-    public Integer getIdEtiqueta(){
+    public Integer getIdEtiqueta() {
         return idEtiqueta;
     }
 
-    public void setIdEtiqueta(Integer idEtiqueta){
+    public void setIdEtiqueta(Integer idEtiqueta) {
         this.idEtiqueta = idEtiqueta;
     }
 
-    public String getEtiDescripcion(){
+    public String getEtiDescripcion() {
         return etiDescripcion;
     }
 
-    public void setImaDescripcion(String etiDescripcion){
+    public void setEtiDescripcion(String etiDescripcion) {
         this.etiDescripcion = etiDescripcion;
     }
 }
