@@ -6,6 +6,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import uchuca.domain.Usuario;
 import uchuca.domain.repository.UserRepository;
+import uchuca.exeptions.EmailExistsException;
 
 import java.util.List;
 import java.util.Optional;
@@ -30,11 +31,16 @@ public class UsuarioService {
 
     public Usuario save(Usuario usuario){
 
-        Usuario user = usuario;
-        if(!(usuario.getConstrasena().length() >=60)){
-            user.setConstrasena(bCryptPasswordEncoder.encode(usuario.getConstrasena()));
+        if(repository.getUserByEmail(usuario.getCorreo()) != null){
+            throw new EmailExistsException("El correo electronico ya existe");
+        }else{
+            Usuario user = usuario;
+            if(!(usuario.getConstrasena().length() >=60)){
+                user.setConstrasena(bCryptPasswordEncoder.encode(usuario.getConstrasena()));
+            }
+            return repository.save(user);
         }
-        return repository.save(user);
+
     }
 
     public  Usuario getUserByEmail(String usuario){

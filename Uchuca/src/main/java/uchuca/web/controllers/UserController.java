@@ -45,7 +45,6 @@ public class UserController {
     })
     public Usuario getByEmail(@PathVariable("email") String email){
         if(service.getUserByEmail(email).equals(null)){
-            System.out.println("error");
             throw new BussnessNotFountException("NO EXISTE EL USUARIO CON EL ID: " + email );
         }else{
             System.out.println("retorno");
@@ -68,7 +67,6 @@ public class UserController {
     @ApiOperation(value = "Guarda todos los usuarios", authorizations = {@Authorization(value = "JWT")})
     @ApiResponse(code  = 200, message = "El usuario fue creado")
     public Usuario save(@RequestBody Usuario userDto){
-        System.out.println("po");
         return
 
                 service.save(userDto);
