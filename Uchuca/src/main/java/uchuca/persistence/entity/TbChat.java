@@ -4,6 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name = "tb_chat")
@@ -20,7 +21,7 @@ public class TbChat {
     private String chatDescripcion;
 
     @Column(name = "cha_fecha_insercion", nullable = false)
-    private Date chatFecha;
+    private Timestamp chatFecha;
 
     @Column(name = "proyecto_id",nullable = false)
     private Integer idProyecto;
@@ -45,11 +46,11 @@ public class TbChat {
         this.chatDescripcion = chatDescripcion;
     }
 
-    public Date getChatFecha() {
+    public Timestamp getChatFecha() {
         return chatFecha;
     }
 
-    public void setChatFecha(Date chatFecha) {
+    public void setChatFecha(Timestamp chatFecha) {
         this.chatFecha = chatFecha;
     }
 
