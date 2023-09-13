@@ -14,11 +14,11 @@ import java.util.List;
 public interface ChatMapper {
 
     @Mappings({
-            @Mapping(source = "idChat", target = "idChat"),
-            @Mapping(source = "chatDescripcion", target = "chatDescripcion"),
-            @Mapping(source = "chatFecha", target = "chatFecha"),
-            @Mapping(source = "idUsuario", target = "idUsuario"),
-            @Mapping(source = "idProyecto", target = "idProyecto")
+            @Mapping(source = "idChat", target = "id"),
+            @Mapping(source = "chatDescripcion", target = "descripcion"),
+            @Mapping(source = "chatFecha", target = "fecha"),
+            @Mapping(source = "idProyecto", target = "idProyecto"),
+            @Mapping(source = "idUsuario", target = "idUsuario")
     })
 
     Chat toChat (TbChat tbChat);

@@ -4,31 +4,34 @@ import lombok.Data;
 
 @Data
 public class Proyecto {
-    private Integer idProyecto;
+    private Integer id;
+
+    private String nombre;
+    private String descripcion;
     private Integer idUsuario;
-    private String prNombre;
-    private String prDescripcion;
 
-    public Integer getId(){
-        return idProyecto;
-    }
-    public void setId(Integer idProyecto){
-        this.idProyecto = idProyecto;
+    public Integer getId() {
+        return id;
     }
 
-    public String getNombre(){
-        return prNombre;
-    }
-    public void setNombre(String prNombre){
-        this.prNombre = prNombre;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-
-    public String getDescripcion(){
-        return prDescripcion;
+    public String getNombre() {
+        return nombre;
     }
-    public void setDescripcion(String prDescripcion){
-        this.prDescripcion = prDescripcion;
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
 
     public Integer getIdUsuario(){

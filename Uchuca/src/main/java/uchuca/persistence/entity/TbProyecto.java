@@ -21,7 +21,7 @@ public class TbProyecto {
     private String prDescripcion;
 
     @Column(name = "id_usuario", nullable = false)
-    private Integer prUsuario;
+    private Integer idUsuario;
 
     public Integer getIdProyecto(){
         return idProyecto;
@@ -44,10 +44,12 @@ public class TbProyecto {
         this.prDescripcion = prDescripcion;
     }
 
-    public Integer getIdUsuario(){
-        return prUsuario;
+
+    public Integer getIdUsuario() {
+        return idUsuario;
     }
-    public void setIdusuario(Integer idusuario){
-        this.prUsuario = prUsuario;
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 }

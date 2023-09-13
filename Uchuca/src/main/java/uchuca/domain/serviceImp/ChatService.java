@@ -10,7 +10,7 @@ import uchuca.domain.repository.ChatRepository;
 
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class ChatService {
 
     @Autowired

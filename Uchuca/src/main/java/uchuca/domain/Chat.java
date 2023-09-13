@@ -2,57 +2,62 @@ package uchuca.domain;
 
 import lombok.Data;
 
+import java.sql.Date;
+
+
 @Data
 public class Chat {
 
 
-    private Integer idChat;
+    private Integer id;
 
-    private String chatDescripcion;
+    private String descripcion;
 
-    private String chatFecha;
+    private Date fecha;
+    private Integer idProyecto;
 
     private Integer idUsuario;
 
-    private Integer idProyecto;
 
-    public Integer getChatid() {
-        return idChat;
+
+    public Integer getId() {
+        return id;
     }
 
-    public void setChatid(int id) {
-        this.idChat = id;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getDescripcion(){
-        return chatDescripcion;
+    public String getDescripcion() {
+        return descripcion;
     }
 
     public void setDescripcion(String descripcion) {
-        this.chatDescripcion = descripcion;
+        this.descripcion = descripcion;
     }
 
-    public String getFecha(){
-        return chatFecha;
+    public Date getFecha() {
+        return fecha;
     }
 
-    public void setFecha(String fecha) {
-        this.chatFecha = fecha;
+    public void setFecha(Date fecha) {
+        this.fecha = fecha;
     }
 
-
-    public Integer getIdUsuario(){
+    public Integer getIdUsuario() {
         return idUsuario;
     }
-    public void setIdUsuario(int idUs){
-        this.idUsuario = idUs;
+
+    public void setIdUsuario(Integer idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
-    public Integer getIdProyecto(){
+    public Integer getIdProyecto() {
         return idProyecto;
     }
-    public void setIdProyecto(int idprj){
-        this.idProyecto = idprj;
+
+    public void setIdProyecto(Integer idProyecto) {
+        this.idProyecto = idProyecto;
     }
 }
 

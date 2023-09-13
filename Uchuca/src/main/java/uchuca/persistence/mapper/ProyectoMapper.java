@@ -13,9 +13,9 @@ import java.util.List;
 public interface ProyectoMapper {
 
     @Mappings({
-            @Mapping(source = "idProyecto", target = "idProyecto"),
-            @Mapping(source = "prDescripcion", target = "prDescripcion"),
-            @Mapping(source = "prNombre", target = "prNombre"),
+            @Mapping(source = "idProyecto", target = "id"),
+            @Mapping(source = "prNombre", target = "nombre"),
+            @Mapping(source = "prDescripcion", target = "descripcion"),
             @Mapping(source = "idUsuario", target = "idUsuario")
 
     })
