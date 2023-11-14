@@ -16,6 +16,9 @@ import org.springframework.web.bind.annotation.RestController;
 import uchuca.domain.dto.AuthenticationRequest;
 import uchuca.domain.dto.AuthenticationResponse;
 import uchuca.domain.serviceImp.Uchuqa;
+import uchuca.domain.serviceImp.UsuarioService;
+import uchuca.exeptions.BussnessNotFountException;
+import uchuca.exeptions.EmailExistsException;
 import uchuca.web.security.filter.JWTUtil;
 
 @RestController
@@ -27,6 +30,8 @@ public class AuthController {
 
     @Autowired
     private Uchuqa service;
+    @Autowired
+    private UsuarioService serviceUser;
 
     @Autowired
     private JWTUtil jwtUtil;
@@ -35,15 +40,17 @@ public class AuthController {
     public ResponseEntity<AuthenticationRequest> createToken(@RequestBody AuthenticationRequest request){
 
         try {
+
             authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword()));
             UserDetails userDetails = service.loadUserByUsername(request.getUsername());
 
             String jwt = jwtUtil.generateToken(userDetails);
 
-            return new ResponseEntity(new AuthenticationResponse(jwt), HttpStatus.OK);
+
+            return new ResponseEntity(new AuthenticationResponse(jwt, serviceUser.getUserByEmail(request.getUsername())), HttpStatus.OK);
         }catch (BadCredentialsException e){
 
-            return new ResponseEntity<>(HttpStatus.FORBIDDEN);
+            throw new BussnessNotFountException("NO EXISTEN REGISTROS");
         }
     }
 }
