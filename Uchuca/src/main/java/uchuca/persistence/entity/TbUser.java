@@ -1,6 +1,7 @@
 package uchuca.persistence.entity;
 
 import lombok.Data;
+import uchuca.domain.Departamento;
 
 
 import javax.persistence.*;
@@ -38,6 +39,53 @@ public class TbUser {
 
     @Column(name = "id_sexo", nullable = false)
     private Integer idSexo;
+
+    @Column(name = "usu_direccion", nullable = false)
+    private String usuDireccion;
+    @Column(name = "usu_descripcion", nullable = false)
+    private String usuDescripcion;
+
+
+
+    @ManyToOne
+    @JoinColumn(name = "id_departamento",insertable = false,updatable = false)
+    private TbDepartamento tbDepartamento;
+    @ManyToOne
+    @JoinColumn(name = "id_sexo",insertable = false,updatable = false)
+    private TbSexo tbSexo;
+
+
+    public String getUsuDescripcion() {
+        return usuDescripcion;
+    }
+
+    public void setUsuDescripcion(String usuDescripcion) {
+        this.usuDescripcion = usuDescripcion;
+    }
+
+    public String getUsuDireccion() {
+        return usuDireccion;
+    }
+
+    public void setUsuDireccion(String usuDireccion) {
+        this.usuDireccion = usuDireccion;
+    }
+
+    public TbSexo getTbSexo() {
+        return tbSexo;
+    }
+
+    public void setTbSexo(TbSexo tbSexo) {
+        this.tbSexo = tbSexo;
+    }
+
+    public TbDepartamento getTbDepartamento() {
+        return tbDepartamento;
+    }
+
+    public void setTbDepartamento(TbDepartamento tbDepartamento) {
+        this.tbDepartamento = tbDepartamento;
+    }
 
     public long getIdUsuario() {
         return idUsuario;

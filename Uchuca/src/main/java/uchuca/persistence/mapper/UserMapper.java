@@ -10,7 +10,9 @@ import uchuca.persistence.entity.TbUser;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel ="spring",uses = {
+        DepartamentoMapper.class, SexoMapper.class
+})
 public interface UserMapper {
     @Mappings({
             @Mapping(source = "idUsuario",target = "id"),
@@ -23,7 +25,11 @@ public interface UserMapper {
             @Mapping(source = "usuPortada",target = "portada"),
             @Mapping(source = "idDepartamento",target = "idDepartamento"),
             @Mapping(source = "idTipoUsuario",target = "idTipoUsuario"),
-            @Mapping(source = "idSexo",target = "idSexo")
+            @Mapping(source = "idSexo",target = "idSexo"),
+            @Mapping(source = "tbDepartamento",target = "departamento"),
+            @Mapping(source = "tbSexo",target = "sexo"),
+            @Mapping(source = "usuDireccion",target = "direccion"),
+            @Mapping(source = "usuDescripcion",target = "descipcion")
 
     })
     Usuario toUsuario (TbUser tbUser);

@@ -12,6 +12,8 @@ public class TbDepartamento {
     @Column(name = "dep_descripcion", nullable = false)
     private String depDescripcion;
 
+
+
     public Integer getIdDepartamento() {
         return idDepartamento;
     }
