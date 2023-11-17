@@ -17,17 +17,13 @@ public class TbChat {
     @Column(name = "id_chat", nullable = false)
     private Integer idChat;
 
-    @Column(name = "cha_descripcion", nullable = false)
-    private String chatDescripcion;
-
-    @Column(name = "cha_fecha_insercion", nullable = false)
-    private Timestamp chatFecha;
-
-    @Column(name = "proyecto_id",nullable = false)
+    @Column(name = "proyecto_id",nullable = true)
     private Integer idProyecto;
 
     @Column(name = "user_id", nullable = false)
     private Integer idUsuario;
+    @Column(name = "user_id2", nullable = false)
+    private Integer idUsuario2;
 
 
     public Integer getIdChat() {
@@ -36,22 +32,6 @@ public class TbChat {
 
     public void setIdChat(Integer idChat) {
         this.idChat = idChat;
-    }
-
-    public String getChatDescripcion() {
-        return chatDescripcion;
-    }
-
-    public void setChatDescripcion(String chatDescripcion) {
-        this.chatDescripcion = chatDescripcion;
-    }
-
-    public Timestamp getChatFecha() {
-        return chatFecha;
-    }
-
-    public void setChatFecha(Timestamp chatFecha) {
-        this.chatFecha = chatFecha;
     }
 
     public Integer getIdProyecto() {
@@ -68,5 +48,13 @@ public class TbChat {
 
     public void setIdUsuario(Integer idUsuario) {
         this.idUsuario = idUsuario;
+    }
+
+    public Integer getIdUsuario2() {
+        return idUsuario2;
+    }
+
+    public void setIdUsuario2(Integer idUsuario2) {
+        this.idUsuario2 = idUsuario2;
     }
 }

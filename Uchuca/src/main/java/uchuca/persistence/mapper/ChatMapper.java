@@ -15,10 +15,9 @@ public interface ChatMapper {
 
     @Mappings({
             @Mapping(source = "idChat", target = "id"),
-            @Mapping(source = "chatDescripcion", target = "descripcion"),
-            @Mapping(source = "chatFecha", target = "fecha"),
             @Mapping(source = "idProyecto", target = "idProyecto"),
-            @Mapping(source = "idUsuario", target = "idUsuario")
+            @Mapping(source = "idUsuario", target = "idUsuario"),
+            @Mapping(source = "idUsuario2", target = "idUsuario2")
     })
 
     Chat toChat (TbChat tbChat);

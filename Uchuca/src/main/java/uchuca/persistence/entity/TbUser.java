@@ -27,9 +27,9 @@ public class TbUser {
     private String usuNombre;
     @Column(name = "ausu_apellido", nullable = false)
     private String usuApellido;
-    @Column(name = "usu_perfil", nullable = false)
+    @Column(name = "usu_perfil", nullable = true)
     private String usuPerfil;
-    @Column(name = "usu_portada", nullable = false)
+    @Column(name = "usu_portada", nullable = true)
     private String usuPortada;
 
     @Column(name = "id_departamento", nullable = false)
@@ -40,9 +40,9 @@ public class TbUser {
     @Column(name = "id_sexo", nullable = false)
     private Integer idSexo;
 
-    @Column(name = "usu_direccion", nullable = false)
+    @Column(name = "usu_direccion", nullable = true)
     private String usuDireccion;
-    @Column(name = "usu_descripcion", nullable = false)
+    @Column(name = "usu_descripcion", nullable = true)
     private String usuDescripcion;
 
 

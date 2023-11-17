@@ -43,7 +43,7 @@ dependencies {
 
 	implementation 'org.springframework.boot:spring-boot-starter:2.7.7'
 	implementation 'io.springfox:springfox-boot-starter:3.0.0'
-
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
 }
 tasks.named('test') {
 	useJUnitPlatform()

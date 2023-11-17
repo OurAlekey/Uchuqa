@@ -31,7 +31,7 @@ public class UsuarioService {
 
     public Usuario save(Usuario usuario){
 
-        if(repository.getUserByEmail(usuario.getCorreo()) != null){
+        if(repository.getUserByEmail(usuario.getCorreo()) != null & usuario.getId() == 0){
             throw new EmailExistsException("El correo electronico ya existe");
         }else{
             Usuario user = usuario;

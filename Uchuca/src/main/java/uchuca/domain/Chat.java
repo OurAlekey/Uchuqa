@@ -12,14 +12,12 @@ public class Chat {
 
     private Integer id;
 
-    private String descripcion;
 
-    private Timestamp fecha;
     private Integer idProyecto;
 
     private Integer idUsuario;
 
-
+    private Integer idUsuario2;
 
     public Integer getId() {
         return id;
@@ -29,20 +27,12 @@ public class Chat {
         this.id = id;
     }
 
-    public String getDescripcion() {
-        return descripcion;
+    public Integer getIdProyecto() {
+        return idProyecto;
     }
 
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    public Timestamp getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(Timestamp fecha) {
-        this.fecha = fecha;
+    public void setIdProyecto(Integer idProyecto) {
+        this.idProyecto = idProyecto;
     }
 
     public Integer getIdUsuario() {
@@ -53,12 +43,12 @@ public class Chat {
         this.idUsuario = idUsuario;
     }
 
-    public Integer getIdProyecto() {
-        return idProyecto;
+    public Integer getIdUsuario2() {
+        return idUsuario2;
     }
 
-    public void setIdProyecto(Integer idProyecto) {
-        this.idProyecto = idProyecto;
+    public void setIdUsuario2(Integer idUsuario2) {
+        this.idUsuario2 = idUsuario2;
     }
 }
 
