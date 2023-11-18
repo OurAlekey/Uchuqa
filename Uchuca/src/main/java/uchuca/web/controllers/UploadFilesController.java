@@ -11,6 +11,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
+import uchuca.domain.ImageResponse;
+import uchuca.domain.Imagenes;
 import uchuca.domain.Usuario;
 import uchuca.domain.repository.UploadFilesRep;
 
@@ -19,7 +21,12 @@ import java.net.MalformedURLException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.core.io.Resource;
+import uchuca.domain.serviceImp.ImagenesService;
+
 @RestController
 @RequestMapping("/img")
 
@@ -27,6 +34,10 @@ public class UploadFilesController {
 
     @Autowired
     UploadFilesRep uploadFilesRep;
+
+    @Autowired
+    ImagenesService imagenesService;
+
     @PostMapping("/cargar/portada/{idUser}")
     @ApiOperation(value = "Guarda la imagen de portada con el id del usaurio", authorizations= {@Authorization(value = "JWT")})
     private ResponseEntity<Usuario> uploadPortada(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
@@ -38,7 +49,15 @@ public class UploadFilesController {
     @ApiOperation(value = "Guarda la imagen del perfil con el id del usaurio", authorizations= {@Authorization(value = "JWT")})
     private ResponseEntity<Usuario> uploadPerfil(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
         return  new ResponseEntity<>(uploadFilesRep.cargarPerfil(file,idUser), HttpStatus.OK);
+    }
 
+
+
+
+    @PostMapping("/cargar/publicacion/{idProyecto}")
+    @ApiOperation(value = "Guarda la imagen del perfil con el id del usaurio", authorizations= {@Authorization(value = "JWT")})
+    private ResponseEntity<List<Imagenes>> uploadPublicaciones (@RequestParam("img")List<MultipartFile> files, @PathVariable("idProyecto")Long idProyecto) throws Exception {
+        return  new ResponseEntity<>(uploadFilesRep.saveAll(files,idProyecto), HttpStatus.OK);
     }
 
 //    @GetMapping("/{imageName}")
@@ -61,7 +80,7 @@ public class UploadFilesController {
 
     public ResponseEntity<Resource> goImage(@PathVariable ("filename") String filename) {
 
-        String fullPath = "src/main/picture/" + filename;
+        String fullPath = "C:/picture/" + filename;
 
         Path imagePath = Paths.get(fullPath);
         Resource resource = new FileSystemResource(imagePath.toFile());
@@ -77,5 +96,28 @@ public class UploadFilesController {
         }
     }
 
-
+//    @GetMapping(value = "/buscar/proyecto/{idProyecto}")
+//    @ApiOperation(value = "Busca la imagen con el nombre del archivo", authorizations= {@Authorization(value = "JWT")})
+//
+//    public ResponseEntity<List<Resource>> getImagenes(@PathVariable ("idProyecto") Integer idProyecto) {
+//
+//        List<Imagenes> imagenes = imagenesService.getByIdProyecto(idProyecto);
+//
+//        List<Resource> resources = new ArrayList<>();
+//        for (Imagenes imagen : imagenes) {
+//            String fullPath = "C:/picture/" + imagen.getDescripcion();
+//            Path imagePath = Paths.get(fullPath);
+//            Resource resource = new FileSystemResource(imagePath.toFile());
+//
+//            if (resource.exists()) {
+//                resources.add(resource);
+//            } else {
+//                // Manejar el caso donde la imagen no existe
+//                return ResponseEntity.notFound().build();
+//            }
+//        }
+//
+//        // Devolver la lista de recursos al final del método
+//        return new ResponseEntity<>(resources, HttpStatus.OK);
+//    }
 }

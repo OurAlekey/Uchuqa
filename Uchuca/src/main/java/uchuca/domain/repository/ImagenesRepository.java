@@ -10,4 +10,6 @@ public interface ImagenesRepository {
     List<Imagenes> getAll();
 
     Imagenes save(Imagenes imagenes);
+
+    List<Imagenes> getByIdProyecto(Integer idProyecto);
 }

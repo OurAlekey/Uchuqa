@@ -47,9 +47,6 @@ public class ProyectoController {
     @ApiOperation(value = "Guarda todos los proyectos", authorizations = {@Authorization(value = "JWT")})
     @ApiResponse(code = 200, message = "El proyecto fue creado con exito!")
     public Proyecto save(@RequestBody Proyecto proyecto){
-        System.out.println("po");
-        return
-
-                service.save(proyecto);
+        return service.save(proyecto);
     }
 }

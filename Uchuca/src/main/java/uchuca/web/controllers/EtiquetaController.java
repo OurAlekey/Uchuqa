@@ -22,7 +22,8 @@ public class EtiquetaController {
     @Autowired
     private EtiquetaService service;
     @GetMapping("/{id}")
-    @ApiOperation(value = "Busca la etiqueta por id", authorizations= {@Authorization(value = "JWT")})
+
+
     @ApiResponses({
             @ApiResponse(code = 200, message = "etiqueta encontrado"),
             @ApiResponse(code = 404, message = "etiqueta no encontrado")

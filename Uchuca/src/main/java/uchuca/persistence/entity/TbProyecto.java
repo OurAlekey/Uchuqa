@@ -14,10 +14,10 @@ public class TbProyecto {
     @Column(name = "id_proyecto", nullable = false)
     private Integer idProyecto;
 
-    @Column(name = "pr_nombre", nullable = false)
+    @Column(name = "pro_nombre", nullable = false)
     private String prNombre;
 
-    @Column(name = "pr_descripcion", nullable = false)
+    @Column(name = "pro_descripcion", nullable = false)
     private String prDescripcion;
 
     @Column(name = "id_usuario", nullable = false)

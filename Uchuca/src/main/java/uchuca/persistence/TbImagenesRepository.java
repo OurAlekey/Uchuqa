@@ -37,5 +37,11 @@ public class TbImagenesRepository implements ImagenesRepository {
         return  mapper.toImagen(repository.save(tbImagenes));
     }
 
+    @Override
+    public List<Imagenes> getByIdProyecto(Integer idProyecto) {
+        List<TbImagenes> tbImagenes = (List<TbImagenes>) repository.findByIdProyecto(idProyecto);
+        return mapper.toImagenes(tbImagenes);
+    }
+
 
 }

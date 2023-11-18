@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uchuca.domain.Imagenes;
 import uchuca.domain.repository.ImagenesRepository;
+import uchuca.exeptions.BussnessNotFountException;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,4 +29,15 @@ public class ImagenesService {
     public Imagenes save(Imagenes imagenes){
         return repository.save(imagenes);
     }
+
+    public List<Imagenes> getByIdProyecto(Integer id){
+
+        if (repository.getByIdProyecto(id).isEmpty()){
+            throw new BussnessNotFountException("NO EXISTEN REGISTROS"  );
+        }else {
+            return repository.getByIdProyecto(id);
+        }
+
+    }
+
 }

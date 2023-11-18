@@ -57,4 +57,14 @@ public class ImagenController {
 
                 service.save(imagenes);
     }
+
+
+    @GetMapping("/idproyecto/{id}")
+    @ApiOperation(value = "Muestra todos las imagenes, authorizations ", authorizations= {@Authorization(value = "JWT")})
+    @ApiResponse(code  = 200, message = "imagenes encontrados")
+    public List<Imagenes> getByIdProyecto(@PathVariable("id") Integer id){
+
+            return service.getByIdProyecto(id);
+
+    }
 }
