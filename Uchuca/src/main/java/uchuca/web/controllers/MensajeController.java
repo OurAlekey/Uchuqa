@@ -63,9 +63,6 @@ public class MensajeController {
                 service.save(mensaje);
     }
 
-    @MessageMapping("/mensaje/{idChat}")
-    @SendTo("/topic/{idChat}")
-    public Mensaje envio(@DestinationVariable("idChat")String id, Mensaje mensaje) {
-    return   service.save(mensaje);
-    }
+
+
 }

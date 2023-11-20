@@ -22,6 +22,18 @@ public class TbImagenes {
     @Column(name = "id_proyecto", nullable = false)
     private Integer idProyecto;
 
+    @ManyToOne
+    @JoinColumn(name = "id_proyecto",insertable = false,updatable = false)
+    private TbProyecto tbProyecto;
+
+    public TbProyecto getTbProyecto() {
+        return tbProyecto;
+    }
+
+    public void setTbProyecto(TbProyecto tbProyecto) {
+        this.tbProyecto = tbProyecto;
+    }
+
     public Integer getIdImagen(){
         return idImagen;
     }

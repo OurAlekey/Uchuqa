@@ -2,6 +2,8 @@ package uchuca.domain;
 
 import lombok.Data;
 
+import java.util.List;
+
 @Data
 public class Proyecto {
     private Integer id;
@@ -9,6 +11,15 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     private Integer idUsuario;
+private List<Imagenes> imagenes;
+
+    public List<Imagenes> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<Imagenes> imagenes) {
+        this.imagenes = imagenes;
+    }
 
     public Integer getId() {
         return id;

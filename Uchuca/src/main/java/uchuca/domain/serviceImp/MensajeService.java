@@ -2,10 +2,9 @@ package uchuca.domain.serviceImp;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.stereotype.Service;
-import uchuca.domain.Chat;
 import uchuca.domain.Mensaje;
-import uchuca.domain.repository.ChatRepository;
 import uchuca.domain.repository.MensajeRepository;
 
 import java.util.List;
@@ -16,6 +15,10 @@ public class MensajeService {
 
     @Autowired
     private MensajeRepository repository;
+
+
+    @Autowired
+    private SimpMessagingTemplate simpMessagingTemplate;
 
     public Optional<Mensaje> getId(Integer id){
         return repository.getId(id);
@@ -28,4 +31,16 @@ public class MensajeService {
     public Mensaje save(Mensaje mensaje){
         return repository.save(mensaje);
     }
+
+    public  void sendMessage(String to,Mensaje mensaje){
+        repository.save(mensaje);;
+
+        simpMessagingTemplate.convertAndSend("/topic/messages/" + to, mensaje);
+    }
+
+    public List<Mensaje> getListMessage(Integer idChat){
+     return repository.getByIdChat(idChat);
+    }
+
+
 }

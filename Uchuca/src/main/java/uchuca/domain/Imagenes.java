@@ -9,6 +9,16 @@ public class Imagenes {
     private String descripcion;
     private Integer idProyecto;
 
+    private Proyecto proyecto;
+
+    public Proyecto getProyecto() {
+        return proyecto;
+    }
+
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+
     public Integer getId() {
         return id;
     }

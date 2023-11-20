@@ -40,4 +40,10 @@ public class TbMensajeRepository implements MensajeRepository {
         TbMensaje tbChat = mapper.toTbMensaje(mensaje);
         return mapper.toMensaje(repository.save(tbChat));
     }
+
+    @Override
+    public List<Mensaje> getByIdChat(Integer idChat) {
+        List<TbMensaje> toMensajes = (List<TbMensaje>) repository.findByIdChat(idChat);
+        return mapper.toMensajes(toMensajes);
+    }
 }

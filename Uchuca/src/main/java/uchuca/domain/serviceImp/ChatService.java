@@ -25,6 +25,15 @@ public class ChatService {
     }
 
     public Chat save(Chat chat){
-        return repository.save(chat);
+        Optional<Chat> existingChat = repository.findByIdUsuers(chat.getIdUsuario(), chat.getIdUsuario2());
+
+        if (existingChat.isPresent()) {
+            // Si ya existe un registro con los mismos idUsuario e idUsuario2, retornar ese registro.
+            return existingChat.get();
+        } else {
+            // Si no existe, guardar el nuevo registro.
+            return repository.save(chat);
+        }
+
     }
 }

@@ -3,7 +3,6 @@ package uchuca.web.controllers;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.FileSystemResource;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -11,17 +10,12 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import uchuca.domain.ImageResponse;
 import uchuca.domain.Imagenes;
 import uchuca.domain.Usuario;
 import uchuca.domain.repository.UploadFilesRep;
 
-import java.io.IOException;
-import java.net.MalformedURLException;
-import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.core.io.Resource;
@@ -30,7 +24,7 @@ import uchuca.domain.serviceImp.ImagenesService;
 @RestController
 @RequestMapping("/img")
 
-public class UploadFilesController {
+public class CargarImagenesController {
 
     @Autowired
     UploadFilesRep uploadFilesRep;

@@ -2,6 +2,7 @@ package uchuca.persistence.entity;
 
 import lombok.Data;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_proyecto")
@@ -22,6 +23,20 @@ public class TbProyecto {
 
     @Column(name = "id_usuario", nullable = false)
     private Integer idUsuario;
+
+
+
+    @OneToMany(mappedBy = "tbProyecto", cascade = CascadeType.ALL)
+    List<TbImagenes> imagenes;
+
+
+    public List<TbImagenes> getImagenes() {
+        return imagenes;
+    }
+
+    public void setImagenes(List<TbImagenes> imagenes) {
+        this.imagenes = imagenes;
+    }
 
     public Integer getIdProyecto(){
         return idProyecto;

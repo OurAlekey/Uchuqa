@@ -5,6 +5,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
 import java.sql.Timestamp;
+import java.util.List;
 
 @Entity
 @Table(name = "tb_chat")
@@ -25,6 +26,23 @@ public class TbChat {
     @Column(name = "user_id2", nullable = false)
     private Integer idUsuario2;
 
+
+    @ManyToOne
+    @JoinColumn(name = "user_id",insertable = false,updatable = false)
+    private TbUser tbUser;
+
+
+    @ManyToOne
+    @JoinColumn(name = "user_id2",insertable = false,updatable = false)
+    private TbUser tbUser2;
+
+    public TbUser getTbUser() {
+        return tbUser;
+    }
+
+    public void setTbUser(TbUser tbUser) {
+        this.tbUser = tbUser;
+    }
 
     public Integer getIdChat() {
         return idChat;

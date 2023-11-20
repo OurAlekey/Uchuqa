@@ -49,4 +49,5 @@ public class ProyectoController {
     public Proyecto save(@RequestBody Proyecto proyecto){
         return service.save(proyecto);
     }
+
 }

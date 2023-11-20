@@ -10,14 +10,18 @@ import uchuca.persistence.entity.TbChat;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring",uses = {
+        UserMapper.class
+})
 public interface ChatMapper {
 
     @Mappings({
             @Mapping(source = "idChat", target = "id"),
             @Mapping(source = "idProyecto", target = "idProyecto"),
             @Mapping(source = "idUsuario", target = "idUsuario"),
-            @Mapping(source = "idUsuario2", target = "idUsuario2")
+            @Mapping(source = "idUsuario2", target = "idUsuario2"),
+            @Mapping(source = "tbUser", target = "usuario"),
+            @Mapping(source = "tbUser2", target = "usuario2")
     })
 
     Chat toChat (TbChat tbChat);

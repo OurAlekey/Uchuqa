@@ -10,4 +10,6 @@ public interface MensajeRepository {
     List<Mensaje> getAll();
 
     Mensaje save(Mensaje mensaje);
+
+    List<Mensaje> getByIdChat(Integer idChat);
 }

@@ -36,4 +36,9 @@ public class TbChatRepository implements  ChatRepository{
         TbChat tbChat = mapper.toTbChat(chat);
         return mapper.toChat(repository.save(tbChat));
     }
+
+    @Override
+    public Optional<Chat> findByIdUsuers(Integer idUsuario, Integer idUsuario2) {
+        return Optional.ofNullable(mapper.toChat(repository.findByIdUsuers(idUsuario, idUsuario2)));
+    }
 }

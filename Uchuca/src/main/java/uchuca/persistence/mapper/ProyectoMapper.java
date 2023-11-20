@@ -9,14 +9,17 @@ import uchuca.persistence.entity.TbProyecto;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel ="spring",uses = {
+        ImagenesMapper.class
+})
 public interface ProyectoMapper {
 
     @Mappings({
             @Mapping(source = "idProyecto", target = "id"),
             @Mapping(source = "prNombre", target = "nombre"),
             @Mapping(source = "prDescripcion", target = "descripcion"),
-            @Mapping(source = "idUsuario", target = "idUsuario")
+            @Mapping(source = "idUsuario", target = "idUsuario"),
+            @Mapping(source = "imagenes", target = "imagenes")
 
     })
     Proyecto toProyecto (TbProyecto tbProyectos);

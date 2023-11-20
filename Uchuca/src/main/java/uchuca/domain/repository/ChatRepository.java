@@ -13,5 +13,6 @@ List<Chat> getAll();
 
 Chat save(Chat chat);
 
+    Optional<Chat> findByIdUsuers(Integer idUsuario, Integer idUsuario2);
 
 }

@@ -5,6 +5,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 import org.springframework.web.bind.annotation.*;
 import uchuca.domain.Etiqueta;
 import uchuca.domain.Imagenes;
@@ -20,6 +21,7 @@ import java.util.Optional;
 public class ImagenController {
     @Autowired
     private ImagenesService service;
+
     @GetMapping("/{id}")
     @ApiOperation(value = "Busca la imagen por id", authorizations= {@Authorization(value = "JWT")})
     @ApiResponses({

@@ -18,16 +18,23 @@ public class ImagenesService {
     @Autowired
     private ImagenesRepository repository;
 
+
+
     public Optional<Imagenes> getId(Integer id){
         return repository.getId(id);
     }
 
     public List<Imagenes> getAll(){
+
         return repository.getAll();
     }
 
     public Imagenes save(Imagenes imagenes){
+        
+
         return repository.save(imagenes);
+
+
     }
 
     public List<Imagenes> getByIdProyecto(Integer id){

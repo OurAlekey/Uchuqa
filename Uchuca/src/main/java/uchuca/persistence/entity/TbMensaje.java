@@ -12,11 +12,11 @@ public class TbMensaje {
     @Column(name = "id_mensaje", nullable = false)
     private Integer idMensaje;
 
-    @Column(name = "id_chat", nullable = false)
+    @Column(name = "id_chat", nullable = true)
     private Integer idChat;
-    @Column(name = "men_mensaje", nullable = false)
+    @Column(name = "men_mensaje", nullable = true)
     private String menMensjae;
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "id_usuario", nullable = true)
     private Integer idUsuario;
     @Column(name = "men_fecha_insercion", nullable = false)
     private  Timestamp menFechaInsercion;
