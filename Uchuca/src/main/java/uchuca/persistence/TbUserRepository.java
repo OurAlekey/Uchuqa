@@ -2,6 +2,9 @@ package uchuca.persistence;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 import uchuca.domain.Usuario;
 import uchuca.domain.repository.UserRepository;
@@ -43,5 +46,15 @@ public class TbUserRepository implements UserRepository {
     public Usuario save(Usuario usuario) {
         TbUser tbUser = mapper.toTbUser(usuario);
         return mapper.toUsuario(repository.save(tbUser));
+    }
+
+    @Override
+    public Page<Usuario> getByNombrePageable(String nombre, Pageable pageable) {
+        Page<TbUser> tbUserPage = repository.findByNamePageable(nombre,pageable);
+        List<Usuario> usuarios = mapper.toUsuarios(tbUserPage.getContent());
+        Page<Usuario> usuarioPage = new PageImpl<>(usuarios,pageable,tbUserPage.getTotalPages());
+
+        System.out.println(nombre);
+        return usuarioPage;
     }
 }

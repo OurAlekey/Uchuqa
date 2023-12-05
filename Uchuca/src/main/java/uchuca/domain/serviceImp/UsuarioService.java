@@ -2,6 +2,8 @@ package uchuca.domain.serviceImp;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import uchuca.domain.Usuario;
@@ -50,7 +52,9 @@ public class UsuarioService {
         return repository.getAll();
     }
 
-
+public Page<Usuario> findByNombrePage(String nombre, Pageable pageable){
+        return  repository.getByNombrePageable(nombre, pageable);
+}
 
 
 }

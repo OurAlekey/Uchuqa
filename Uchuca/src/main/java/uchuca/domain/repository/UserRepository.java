@@ -1,6 +1,8 @@
 package uchuca.domain.repository;
 
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import uchuca.domain.Usuario;
 
 import java.util.List;
@@ -12,4 +14,6 @@ public interface UserRepository {
     public Optional<Usuario> getId(long id);
     public List<Usuario> getAll();
     public Usuario save(Usuario usuario);
+
+    Page<Usuario> getByNombrePageable(String nombre , Pageable pageable);
 }

@@ -1,6 +1,10 @@
 package uchuca.web.controllers;
 
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
+import org.springframework.http.HttpStatus;
 import uchuca.exeptions.BussnessNotFountException;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
@@ -70,5 +74,14 @@ public class UserController {
         return
 
                 service.save(userDto);
+    }
+
+    @GetMapping("/filter/{pNo}")
+    @ApiOperation(value = "Obtiene todos los personas por sus datos", authorizations = {@Authorization(value = "JWT")})
+    @ApiResponse(code = 200, message = "OK")
+    public ResponseEntity<Page<Usuario>> getByNamePage(  @PathVariable("pNo") String pNombre,  @PageableDefault(size = 10, page = 0) Pageable pageable){
+
+
+        return  new ResponseEntity<>(service.findByNombrePage(pNombre, pageable), HttpStatus.OK);
     }
 }
