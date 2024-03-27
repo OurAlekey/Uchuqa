@@ -14,8 +14,7 @@ public class TbReaccion {
     @Column(name = "id_reacciones", nullable = false)
     private Integer idReaccion;
     @Column(name = "id_proyecto", nullable = false)
-    private Integer idPoryecto
-            ;
+    private Integer idPoryecto;
 
     public Integer getIdContadorReacciones() {
         return idContadorReacciones;

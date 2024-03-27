@@ -17,6 +17,7 @@ public interface MunicipioMapper {
             @Mapping(source = "munDescripcion",target = "descripcion"),
             @Mapping(source = "idDepartamento",target = "idDepartamento"),
 
+
     })
     Municipio toMunicipio(TbMunicipio tbMunicipio);
     List<Municipio> toMunicipios(List<TbMunicipio> tbMunicipios);

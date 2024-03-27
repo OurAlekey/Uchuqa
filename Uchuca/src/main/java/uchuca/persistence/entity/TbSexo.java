@@ -9,8 +9,6 @@ public class TbSexo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_sexo", nullable = false)
     private  Integer idSexo;
-
-
     @Column(name = "sex_descripcion", nullable = false)
     private String sexDescripcion;
 

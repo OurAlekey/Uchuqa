@@ -16,7 +16,7 @@ import java.util.List;
 public interface UserMapper {
     @Mappings({
             @Mapping(source = "idUsuario",target = "id"),
-            @Mapping(source = "usuEdad",target = "edad"),
+            @Mapping(source = "usuFechaNacimiento",target = "fechaNacimiento"),
             @Mapping(source = "usuEmail",target = "correo"),
             @Mapping(source = "usoContra",target = "contrasena"),
             @Mapping(source = "usuNombre",target = "nombre"),

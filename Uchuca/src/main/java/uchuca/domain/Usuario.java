@@ -2,11 +2,13 @@ package uchuca.domain;
 
 import lombok.Data;
 
+import java.sql.Date;
+
 @Data
 public class Usuario {
 
     private  long id;
-    private  int edad;
+    private Date fechaNacimiento;
     private String correo;
     private String contrasena;
     private String nombre;
@@ -16,52 +18,8 @@ public class Usuario {
     private Integer idSexo;
     private String descipcion;
     private String  direccion;
-
-
     private Municipio municipio;
     private Sexo sexo;
-
-
-
-    public String getDescipcion() {
-        return descipcion;
-    }
-
-    public void setDescipcion(String descipcion) {
-        this.descipcion = descipcion;
-    }
-
-    public String getDireccion() {
-        return direccion;
-    }
-
-    public void setDireccion(String direccion) {
-        this.direccion = direccion;
-    }
-
-    public Sexo getSexo() {
-        return sexo;
-    }
-
-    public void setSexo(Sexo sexo) {
-        this.sexo = sexo;
-    }
-
-    public Municipio getMunicipio() {
-        return municipio;
-    }
-
-    public void setMunicipio(Municipio municipio) {
-        this.municipio = municipio;
-    }
-
-    public Integer getIdSexo() {
-        return idSexo;
-    }
-
-    public void setIdSexo(Integer idSexo) {
-        this.idSexo = idSexo;
-    }
 
     public long getId() {
         return id;
@@ -71,12 +29,12 @@ public class Usuario {
         this.id = id;
     }
 
-    public int getEdad() {
-        return edad;
+    public Date getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setEdad(int edad) {
-        this.edad = edad;
+    public void setFechaNacimiento(Date fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
     public String getCorreo() {
@@ -125,5 +83,45 @@ public class Usuario {
 
     public void setIdTipoUsuario(Integer idTipoUsuario) {
         this.idTipoUsuario = idTipoUsuario;
+    }
+
+    public Integer getIdSexo() {
+        return idSexo;
+    }
+
+    public void setIdSexo(Integer idSexo) {
+        this.idSexo = idSexo;
+    }
+
+    public String getDescipcion() {
+        return descipcion;
+    }
+
+    public void setDescipcion(String descipcion) {
+        this.descipcion = descipcion;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
+
+    public Municipio getMunicipio() {
+        return municipio;
+    }
+
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
+    }
+
+    public Sexo getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(Sexo sexo) {
+        this.sexo = sexo;
     }
 }

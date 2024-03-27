@@ -2,6 +2,7 @@ package uchuca.persistence.entity;
 
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name= "tb_municipio")
@@ -9,13 +10,14 @@ import javax.persistence.*;
 public class TbMunicipio {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_usuario", nullable = false)
+    @Column(name = "id_municipio", nullable = false)
     private Integer idMunicipio;
 
     @Column(name = "mun_descripcion", nullable = false)
     private String   munDescripcion;
     @Column(name = "id_departamento", nullable = false)
     private Integer idDepartamento;
+
 
     public Integer getIdMunicipio() {
         return idMunicipio;

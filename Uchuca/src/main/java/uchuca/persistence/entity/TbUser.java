@@ -5,6 +5,7 @@ import uchuca.domain.Departamento;
 
 
 import javax.persistence.*;
+import java.sql.Date;
 
 
 @Entity
@@ -16,8 +17,8 @@ public class TbUser {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_usuario", nullable = false)
     private long idUsuario;
-    @Column(name = "usu_edad", nullable = false)
-    private int usuEdad;
+    @Column(name = "usu_fecha_nacimiento", nullable = false)
+    private Date usuFechaNacimiento;
     @Column(name = "usu_email", nullable = false)
     private String usuEmail;
     @Column(name = "usu_contra", nullable = false)
@@ -49,38 +50,6 @@ public class TbUser {
     private TbSexo tbSexo;
 
 
-    public String getUsuDescripcion() {
-        return usuDescripcion;
-    }
-
-    public void setUsuDescripcion(String usuDescripcion) {
-        this.usuDescripcion = usuDescripcion;
-    }
-
-    public String getUsuDireccion() {
-        return usuDireccion;
-    }
-
-    public void setUsuDireccion(String usuDireccion) {
-        this.usuDireccion = usuDireccion;
-    }
-
-    public TbSexo getTbSexo() {
-        return tbSexo;
-    }
-
-    public void setTbSexo(TbSexo tbSexo) {
-        this.tbSexo = tbSexo;
-    }
-
-    public TbMunicipio getTbMunicipio() {
-        return tbMunicipio;
-    }
-
-    public void setTbMunicipio(TbMunicipio tbMunicipio) {
-        this.tbMunicipio = tbMunicipio;
-    }
-
     public long getIdUsuario() {
         return idUsuario;
     }
@@ -89,12 +58,12 @@ public class TbUser {
         this.idUsuario = idUsuario;
     }
 
-    public int getUsuEdad() {
-        return usuEdad;
+    public Date getUsuFechaNacimiento() {
+        return usuFechaNacimiento;
     }
 
-    public void setUsuEdad(int usuEdad) {
-        this.usuEdad = usuEdad;
+    public void setUsuFechaNacimiento(Date usuFechaNacimiento) {
+        this.usuFechaNacimiento = usuFechaNacimiento;
     }
 
     public String getUsuEmail() {
@@ -129,7 +98,6 @@ public class TbUser {
         this.usuApellido = usuApellido;
     }
 
-
     public Integer getIdMunicipio() {
         return idMunicipio;
     }
@@ -152,5 +120,37 @@ public class TbUser {
 
     public void setIdSexo(Integer idSexo) {
         this.idSexo = idSexo;
+    }
+
+    public String getUsuDescripcion() {
+        return usuDescripcion;
+    }
+
+    public void setUsuDescripcion(String usuDescripcion) {
+        this.usuDescripcion = usuDescripcion;
+    }
+
+    public String getUsuDireccion() {
+        return usuDireccion;
+    }
+
+    public void setUsuDireccion(String usuDireccion) {
+        this.usuDireccion = usuDireccion;
+    }
+
+    public TbMunicipio getTbMunicipio() {
+        return tbMunicipio;
+    }
+
+    public void setTbMunicipio(TbMunicipio tbMunicipio) {
+        this.tbMunicipio = tbMunicipio;
+    }
+
+    public TbSexo getTbSexo() {
+        return tbSexo;
+    }
+
+    public void setTbSexo(TbSexo tbSexo) {
+        this.tbSexo = tbSexo;
     }
 }
