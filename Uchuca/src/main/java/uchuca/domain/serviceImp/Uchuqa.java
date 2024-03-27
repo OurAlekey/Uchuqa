@@ -18,6 +18,6 @@ public class Uchuqa implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         Usuario usuario =  usuarioServiceImp.getUserByEmail(username);
-        return new User(usuario.getCorreo(), usuario.getConstrasena(),new ArrayList<>());
+        return new User(usuario.getCorreo(), usuario.getContrasena(),new ArrayList<>());
     }
 }

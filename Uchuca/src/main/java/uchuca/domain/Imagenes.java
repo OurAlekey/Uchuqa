@@ -10,6 +10,8 @@ public class Imagenes {
     private Integer idProyecto;
 
     private Proyecto proyecto;
+    private  long idUserPerfil;
+    private long idUserPortada;
 
     public Proyecto getProyecto() {
         return proyecto;
@@ -43,5 +45,19 @@ public class Imagenes {
         this.idProyecto = idProyecto;
     }
 
+    public long getIdUserPerfil() {
+        return idUserPerfil;
+    }
 
+    public void setIdUserPerfil(long idUserPerfil) {
+        this.idUserPerfil = idUserPerfil;
+    }
+
+    public long getIdUserPortada() {
+        return idUserPortada;
+    }
+
+    public void setIdUserPortada(long idUserPortada) {
+        this.idUserPortada = idUserPortada;
+    }
 }

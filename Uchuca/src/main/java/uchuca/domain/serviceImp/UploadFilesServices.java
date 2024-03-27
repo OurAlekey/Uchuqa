@@ -29,27 +29,29 @@ public class UploadFilesServices implements UploadFilesRep {
     @Autowired
     ImagenesService imagenesService;
     @Override
-    public Usuario cargarPortada(MultipartFile file,Long idUser) throws Exception {
+    public Imagenes cargarPortada(MultipartFile file,Long idUser) throws Exception {
         try {
-
-            Optional<Usuario> usuario = usuerService.getId( idUser);
-            String  newFileName =  cargarImg(file,usuario.get().getNombre()+"Portada");
-                usuario.get().setPortada(newFileName);
-            return  usuerService.save(usuario.get());
+            Imagenes imagenes = new Imagenes();
+            String fileName = UUID.randomUUID().toString();
+            String  newFileName =  cargarImg(file,fileName+"Portada");
+            imagenes.setDescripcion(newFileName);
+            imagenes.setIdUserPortada(idUser);
+            return  imagenesService.save(imagenes);
         }catch (Exception e){
             throw new EmailExistsException("Ocurrio un error");
         }
     }
 
     @Override
-    public Usuario cargarPerfil(MultipartFile file, Long idUser) throws Exception {
+    public Imagenes cargarPerfil(MultipartFile file, Long idUser) throws Exception {
         try {
 
-            Optional<Usuario> usuario = usuerService.getId( idUser);
-            String  newFileName =  cargarImg(file,usuario.get().getCorreo()+"Perfil");
-            usuario.get().setPerfil(newFileName);
-
-            return  usuerService.save(usuario.get());
+            Imagenes imagenes = new Imagenes();
+            String fileName = UUID.randomUUID().toString();
+            String  newFileName =  cargarImg(file,fileName+"Portada");
+            imagenes.setDescripcion(newFileName);
+            imagenes.setIdUserPortada(idUser);
+            return  imagenesService.save(imagenes);
         }catch (Exception e){
             throw new EmailExistsException("Error al guardar");
         }

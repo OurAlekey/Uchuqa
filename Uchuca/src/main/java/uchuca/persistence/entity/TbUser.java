@@ -9,7 +9,6 @@ import javax.persistence.*;
 
 @Entity
 @Table(name= "tb_usuario")
-@Data
 
 public class TbUser {
 
@@ -27,29 +26,24 @@ public class TbUser {
     private String usuNombre;
     @Column(name = "ausu_apellido", nullable = false)
     private String usuApellido;
-    @Column(name = "usu_perfil", nullable = true)
-    private String usuPerfil;
-    @Column(name = "usu_portada", nullable = true)
-    private String usuPortada;
-
-    @Column(name = "id_departamento", nullable = false)
-    private Integer idDepartamento;
+    @Column(name = "id_municipio", nullable = false)
+    private Integer idMunicipio;
     @Column(name = "id_tipo_usurio", nullable = false)
     private Integer idTipoUsuario;
 
     @Column(name = "id_sexo", nullable = false)
     private Integer idSexo;
 
-    @Column(name = "usu_direccion", nullable = true)
-    private String usuDireccion;
     @Column(name = "usu_descripcion", nullable = true)
     private String usuDescripcion;
+    @Column(name = "usu_direccion", nullable = true)
+    private String usuDireccion;
 
 
 
     @ManyToOne
-    @JoinColumn(name = "id_departamento",insertable = false,updatable = false)
-    private TbDepartamento tbDepartamento;
+    @JoinColumn(name = "id_municipio",insertable = false,updatable = false)
+    private TbMunicipio tbMunicipio;
     @ManyToOne
     @JoinColumn(name = "id_sexo",insertable = false,updatable = false)
     private TbSexo tbSexo;
@@ -79,12 +73,12 @@ public class TbUser {
         this.tbSexo = tbSexo;
     }
 
-    public TbDepartamento getTbDepartamento() {
-        return tbDepartamento;
+    public TbMunicipio getTbMunicipio() {
+        return tbMunicipio;
     }
 
-    public void setTbDepartamento(TbDepartamento tbDepartamento) {
-        this.tbDepartamento = tbDepartamento;
+    public void setTbMunicipio(TbMunicipio tbMunicipio) {
+        this.tbMunicipio = tbMunicipio;
     }
 
     public long getIdUsuario() {
@@ -135,28 +129,13 @@ public class TbUser {
         this.usuApellido = usuApellido;
     }
 
-    public String getUsuPerfil() {
-        return usuPerfil;
+
+    public Integer getIdMunicipio() {
+        return idMunicipio;
     }
 
-    public void setUsuPerfil(String usuPerfil) {
-        this.usuPerfil = usuPerfil;
-    }
-
-    public String getUsuPortada() {
-        return usuPortada;
-    }
-
-    public void setUsuPortada(String usuPortada) {
-        this.usuPortada = usuPortada;
-    }
-
-    public Integer getIdDepartamento() {
-        return idDepartamento;
-    }
-
-    public void setIdDepartamento(Integer idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setIdMunicipio(Integer idMunicipio) {
+        this.idMunicipio = idMunicipio;
     }
 
     public Integer getIdTipoUsuario() {

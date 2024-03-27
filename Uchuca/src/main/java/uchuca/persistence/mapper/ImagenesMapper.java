@@ -16,7 +16,9 @@ public interface ImagenesMapper {
     @Mappings({
             @Mapping(source = "idImagen", target = "id"),
             @Mapping(source = "imaDescripcion", target = "descripcion"),
-            @Mapping(source = "idProyecto", target = "idProyecto")
+            @Mapping(source = "idProyecto", target = "idProyecto"),
+            @Mapping(source = "idUserPerfil", target = "idUserPerfil"),
+            @Mapping(source = "idUserPortada", target = "idUserPortada")
     })
     Imagenes toImagen (TbImagenes tbImagenes);
     List<Imagenes> toImagenes (List<TbImagenes> tbImagenes);

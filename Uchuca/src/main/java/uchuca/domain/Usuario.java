@@ -8,20 +8,19 @@ public class Usuario {
     private  long id;
     private  int edad;
     private String correo;
-    private String constrasena;
+    private String contrasena;
     private String nombre;
     private String apellido;
-    private String perfil;
-    private String portada;
-    private Integer idDepartamento;
+    private Integer idMunicipio;
     private Integer idTipoUsuario;
-
     private Integer idSexo;
-
-    private Departamento departamento;
-    private Sexo sexo;
-    private String  direccion;
     private String descipcion;
+    private String  direccion;
+
+
+    private Municipio municipio;
+    private Sexo sexo;
+
 
 
     public String getDescipcion() {
@@ -48,12 +47,12 @@ public class Usuario {
         this.sexo = sexo;
     }
 
-    public Departamento getDepartamento() {
-        return departamento;
+    public Municipio getMunicipio() {
+        return municipio;
     }
 
-    public void setDepartamento(Departamento departamento) {
-        this.departamento = departamento;
+    public void setMunicipio(Municipio municipio) {
+        this.municipio = municipio;
     }
 
     public Integer getIdSexo() {
@@ -88,12 +87,12 @@ public class Usuario {
         this.correo = correo;
     }
 
-    public String getConstrasena() {
-        return constrasena;
+    public String getContrasena() {
+        return contrasena;
     }
 
-    public void setConstrasena(String constrasena) {
-        this.constrasena = constrasena;
+    public void setContrasena(String contrasena) {
+        this.contrasena = contrasena;
     }
 
     public String getNombre() {
@@ -112,28 +111,12 @@ public class Usuario {
         this.apellido = apellido;
     }
 
-    public String getPerfil() {
-        return perfil;
+    public Integer getIdMunicipio() {
+        return idMunicipio;
     }
 
-    public void setPerfil(String perfil) {
-        this.perfil = perfil;
-    }
-
-    public String getPortada() {
-        return portada;
-    }
-
-    public void setPortada(String portada) {
-        this.portada = portada;
-    }
-
-    public Integer getIdDepartamento() {
-        return idDepartamento;
-    }
-
-    public void setIdDepartamento(Integer idDepartamento) {
-        this.idDepartamento = idDepartamento;
+    public void setIdMunicipio(Integer idMunicipio) {
+        this.idMunicipio = idMunicipio;
     }
 
     public Integer getIdTipoUsuario() {

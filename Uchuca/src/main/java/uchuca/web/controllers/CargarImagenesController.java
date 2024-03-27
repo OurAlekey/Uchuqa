@@ -34,14 +34,14 @@ public class CargarImagenesController {
 
     @PostMapping("/cargar/portada/{idUser}")
     @ApiOperation(value = "Guarda la imagen de portada con el id del usaurio", authorizations= {@Authorization(value = "JWT")})
-    private ResponseEntity<Usuario> uploadPortada(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
+    private ResponseEntity<Imagenes> uploadPortada(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
         return  new ResponseEntity<>(uploadFilesRep.cargarPortada(file,idUser), HttpStatus.OK);
 
     }
 
     @PostMapping("/cargar/perfil/{idUser}")
     @ApiOperation(value = "Guarda la imagen del perfil con el id del usaurio", authorizations= {@Authorization(value = "JWT")})
-    private ResponseEntity<Usuario> uploadPerfil(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
+    private ResponseEntity<Imagenes> uploadPerfil(@RequestParam("img")MultipartFile file, @PathVariable("idUser")Long idUser) throws Exception {
         return  new ResponseEntity<>(uploadFilesRep.cargarPerfil(file,idUser), HttpStatus.OK);
     }
 

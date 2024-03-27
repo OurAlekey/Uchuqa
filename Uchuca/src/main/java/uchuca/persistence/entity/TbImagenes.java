@@ -19,12 +19,21 @@ public class TbImagenes {
     @Column(name = "ima_descripcion", nullable = false)
     private String imaDescripcion;
 
-    @Column(name = "id_proyecto", nullable = false)
+    @Column(name = "id_proyecto", nullable = true)
     private Integer idProyecto;
+
+    @Column(name = "id_user_perfil", nullable = true)
+    private long idUserPerfil;
+
+    @Column(name = "id_user_portada", nullable = true)
+    private long idUserPortada;
 
     @ManyToOne
     @JoinColumn(name = "id_proyecto",insertable = false,updatable = false)
     private TbProyecto tbProyecto;
+
+
+
 
     public TbProyecto getTbProyecto() {
         return tbProyecto;
@@ -58,7 +67,19 @@ public class TbImagenes {
         this.idProyecto = idProyecto;
     }
 
+    public long getIdUserPerfil() {
+        return idUserPerfil;
+    }
 
+    public void setIdUserPerfil(long idUserPerfil) {
+        this.idUserPerfil = idUserPerfil;
+    }
 
+    public long getIdUserPortada() {
+        return idUserPortada;
+    }
 
+    public void setIdUserPortada(long idUserPortada) {
+        this.idUserPortada = idUserPortada;
+    }
 }

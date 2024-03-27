@@ -22,14 +22,8 @@ public class UsuarioService {
     @Autowired
     private BCryptPasswordEncoder bCryptPasswordEncoder;
     public Optional<Usuario> getId(Long id){
-
-
             return repository.getId(id);
-
-
-
     }
-
 
     public Usuario save(Usuario usuario){
 
@@ -37,8 +31,8 @@ public class UsuarioService {
             throw new EmailExistsException("El correo electronico ya existe");
         }else{
             Usuario user = usuario;
-            if(!(usuario.getConstrasena().length() >=60)){
-                user.setConstrasena(bCryptPasswordEncoder.encode(usuario.getConstrasena()));
+            if(!(usuario.getContrasena().length() >=60)){
+                user.setContrasena(bCryptPasswordEncoder.encode(usuario.getContrasena()));
             }
             return repository.save(user);
         }
@@ -52,7 +46,7 @@ public class UsuarioService {
         return repository.getAll();
     }
 
-public Page<Usuario> findByNombrePage(String nombre, Pageable pageable){
+    public Page<Usuario> findByNombrePage(String nombre, Pageable pageable){
         return  repository.getByNombrePageable(nombre, pageable);
 }
 
