@@ -28,21 +28,6 @@ public class TbImagenes {
     @Column(name = "id_user_portada", nullable = true)
     private long idUserPortada;
 
-    @ManyToOne
-    @JoinColumn(name = "id_proyecto",insertable = false,updatable = false)
-    private TbProyecto tbProyecto;
-
-
-
-
-    public TbProyecto getTbProyecto() {
-        return tbProyecto;
-    }
-
-    public void setTbProyecto(TbProyecto tbProyecto) {
-        this.tbProyecto = tbProyecto;
-    }
-
     public Integer getIdImagen(){
         return idImagen;
     }
