@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import io.swagger.annotations.Authorization;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.messaging.simp.SimpMessagingTemplate;
+
 import org.springframework.web.bind.annotation.*;
 import uchuca.domain.Etiqueta;
 import uchuca.domain.Imagenes;

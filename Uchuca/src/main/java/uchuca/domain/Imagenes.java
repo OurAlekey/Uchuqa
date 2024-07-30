@@ -10,15 +10,11 @@ public class Imagenes {
     private Integer idProyecto;
 
     private Proyecto proyecto;
-    private  long idUserPerfil;
-    private long idUserPortada;
+    private Integer idUserPerfil;
+    private Integer idUserPortada;
 
     public Proyecto getProyecto() {
         return proyecto;
-    }
-
-    public void setProyecto(Proyecto proyecto) {
-        this.proyecto = proyecto;
     }
 
     public Integer getId() {
@@ -37,27 +33,31 @@ public class Imagenes {
         this.descripcion = descripcion;
     }
 
-    public Integer getIdProyecto(){
+    public Integer getIdProyecto() {
         return idProyecto;
     }
 
-    public void setIdProyecto(Integer idProyecto){
+    public void setIdProyecto(Integer idProyecto) {
         this.idProyecto = idProyecto;
     }
 
-    public long getIdUserPerfil() {
+    public void setProyecto(Proyecto proyecto) {
+        this.proyecto = proyecto;
+    }
+
+    public Integer getIdUserPerfil() {
         return idUserPerfil;
     }
 
-    public void setIdUserPerfil(long idUserPerfil) {
+    public void setIdUserPerfil(Integer idUserPerfil) {
         this.idUserPerfil = idUserPerfil;
     }
 
-    public long getIdUserPortada() {
+    public Integer getIdUserPortada() {
         return idUserPortada;
     }
 
-    public void setIdUserPortada(long idUserPortada) {
+    public void setIdUserPortada(Integer idUserPortada) {
         this.idUserPortada = idUserPortada;
     }
 }

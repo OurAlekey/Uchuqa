@@ -40,8 +40,6 @@ public class TbUser {
     @Column(name = "usu_direccion", nullable = true)
     private String usuDireccion;
 
-
-
     @ManyToOne
     @JoinColumn(name = "id_municipio",insertable = false,updatable = false)
     private TbMunicipio tbMunicipio;

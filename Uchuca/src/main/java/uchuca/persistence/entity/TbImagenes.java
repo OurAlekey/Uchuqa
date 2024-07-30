@@ -23,17 +23,54 @@ public class TbImagenes {
     private Integer idProyecto;
 
     @Column(name = "id_user_perfil", nullable = true)
-    private long idUserPerfil;
+    private Integer idUserPerfil;
 
     @Column(name = "id_user_portada", nullable = true)
-    private long idUserPortada;
+    private Integer idUserPortada;
 
     @ManyToOne
     @JoinColumn(name = "id_proyecto",insertable = false,updatable = false)
     private TbProyecto tbProyecto;
 
+    public Integer getIdImagen() {
+        return idImagen;
+    }
 
+    public void setIdImagen(Integer idImagen) {
+        this.idImagen = idImagen;
+    }
 
+    public String getImaDescripcion() {
+        return imaDescripcion;
+    }
+
+    public void setImaDescripcion(String imaDescripcion) {
+        this.imaDescripcion = imaDescripcion;
+    }
+
+    public Integer getIdProyecto() {
+        return idProyecto;
+    }
+
+    public void setIdProyecto(Integer idProyecto) {
+        this.idProyecto = idProyecto;
+    }
+
+    public Integer getIdUserPerfil() {
+        return idUserPerfil;
+    }
+
+    public void setIdUserPerfil(Integer idUserPerfil) {
+        this.idUserPerfil = idUserPerfil;
+    }
+
+    public Integer getIdUserPortada() {
+        return idUserPortada;
+    }
+
+    public void setIdUserPortada(Integer idUserPortada) {
+        this.idUserPortada = idUserPortada;
+    }
 
     public TbProyecto getTbProyecto() {
         return tbProyecto;
@@ -41,45 +78,5 @@ public class TbImagenes {
 
     public void setTbProyecto(TbProyecto tbProyecto) {
         this.tbProyecto = tbProyecto;
-    }
-
-    public Integer getIdImagen(){
-        return idImagen;
-    }
-
-    public void setIdImagen(Integer idImagen){
-        this.idImagen = idImagen;
-    }
-
-    public String getImaDescripcion(){
-        return imaDescripcion;
-    }
-
-    public void setImaDescripcion(String imaDescripcion){
-        this.imaDescripcion = imaDescripcion;
-    }
-
-    public Integer getIdProyecto(){
-        return idProyecto;
-    }
-
-    public void setIdProyecto(Integer idProyecto){
-        this.idProyecto = idProyecto;
-    }
-
-    public long getIdUserPerfil() {
-        return idUserPerfil;
-    }
-
-    public void setIdUserPerfil(long idUserPerfil) {
-        this.idUserPerfil = idUserPerfil;
-    }
-
-    public long getIdUserPortada() {
-        return idUserPortada;
-    }
-
-    public void setIdUserPortada(long idUserPortada) {
-        this.idUserPortada = idUserPortada;
     }
 }

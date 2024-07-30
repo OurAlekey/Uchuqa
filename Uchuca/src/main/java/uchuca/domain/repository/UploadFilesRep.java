@@ -12,9 +12,9 @@ import uchuca.domain.Usuario;
 
 public interface UploadFilesRep {
 
-   Imagenes cargarPortada (MultipartFile file, Long idUser) throws Exception;
-   Imagenes cargarPerfil (MultipartFile file, Long idUser) throws Exception;
+   Imagenes cargarPortada (MultipartFile file, Integer idUser) throws Exception;
+   Imagenes cargarPerfil (MultipartFile file, Integer idUser) throws Exception;
 
-   List<Imagenes> saveAll(List<MultipartFile> files, Long idUser) throws Exception;
+   List<Imagenes> saveAll(List<MultipartFile> files, Integer idUser) throws Exception;
 
 }

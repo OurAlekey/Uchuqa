@@ -29,21 +29,24 @@ public class UploadFilesServices implements UploadFilesRep {
     @Autowired
     ImagenesService imagenesService;
     @Override
-    public Imagenes cargarPortada(MultipartFile file,Long idUser) throws Exception {
+    public Imagenes cargarPortada(MultipartFile file,Integer idUser) throws Exception {
         try {
+            System.out.println(idUser);
             Imagenes imagenes = new Imagenes();
             String fileName = UUID.randomUUID().toString();
             String  newFileName =  cargarImg(file,fileName+"Portada");
             imagenes.setDescripcion(newFileName);
             imagenes.setIdUserPortada(idUser);
+            System.out.println(imagenes);
             return  imagenesService.save(imagenes);
         }catch (Exception e){
+            System.out.println(e);
             throw new EmailExistsException("Ocurrio un error");
         }
     }
 
     @Override
-    public Imagenes cargarPerfil(MultipartFile file, Long idUser) throws Exception {
+    public Imagenes cargarPerfil(MultipartFile file, Integer idUser) throws Exception {
         try {
 
             Imagenes imagenes = new Imagenes();
@@ -58,7 +61,7 @@ public class UploadFilesServices implements UploadFilesRep {
     }
 
     @Override
-    public List<Imagenes> saveAll(List<MultipartFile> files, Long idProyecto) throws Exception {
+    public List<Imagenes> saveAll(List<MultipartFile> files, Integer idProyecto) throws Exception {
         try {
             List<Imagenes> imagenes = new ArrayList<>();
 

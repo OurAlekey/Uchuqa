@@ -30,8 +30,6 @@ public class ImagenesService {
     }
 
     public Imagenes save(Imagenes imagenes){
-        
-
         return repository.save(imagenes);
 
 
