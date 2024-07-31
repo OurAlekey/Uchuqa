@@ -24,11 +24,19 @@ public class TbProyecto {
     @Column(name = "id_usuario", nullable = false)
     private Integer idUsuario;
 
-
-
+    @ManyToOne
+    @JoinColumn(name = "id_usuario",insertable = false,updatable = false)
+   private  TbUser user;
     @OneToMany(mappedBy = "tbProyecto", cascade = CascadeType.ALL)
     List<TbImagenes> imagenes;
 
+    public TbUser getUser() {
+        return user;
+    }
+
+    public void setUser(TbUser user) {
+        this.user = user;
+    }
 
     public List<TbImagenes> getImagenes() {
         return imagenes;

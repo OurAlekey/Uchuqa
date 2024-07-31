@@ -28,6 +28,8 @@ public interface UserMapper {
             @Mapping(source = "usuDireccion",target = "direccion"),
             @Mapping(source = "tbMunicipio",target = "municipio"),
             @Mapping(source = "tbSexo",target = "sexo"),
+            @Mapping(source = "perfil",target = "perfil"),
+            @Mapping(source = "portada",target = "portada"),
     })
     Usuario toUsuario (TbUser tbUser);
     List<Usuario> toUsuarios (List<TbUser> tbUsers);

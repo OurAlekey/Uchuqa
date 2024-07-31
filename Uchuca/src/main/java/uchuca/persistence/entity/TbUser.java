@@ -39,7 +39,10 @@ public class TbUser {
     private String usuDescripcion;
     @Column(name = "usu_direccion", nullable = true)
     private String usuDireccion;
-
+    @Column(name = "perfil", nullable = true)
+    private String perfil;
+    @Column(name = "portada", nullable = true)
+    private String portada;
     @ManyToOne
     @JoinColumn(name = "id_municipio",insertable = false,updatable = false)
     private TbMunicipio tbMunicipio;
@@ -47,6 +50,21 @@ public class TbUser {
     @JoinColumn(name = "id_sexo",insertable = false,updatable = false)
     private TbSexo tbSexo;
 
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public String getPortada() {
+        return portada;
+    }
+
+    public void setPortada(String portada) {
+        this.portada = portada;
+    }
 
     public long getIdUsuario() {
         return idUsuario;

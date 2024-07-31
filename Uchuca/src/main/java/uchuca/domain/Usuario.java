@@ -18,8 +18,27 @@ public class Usuario {
     private Integer idSexo;
     private String descipcion;
     private String  direccion;
+    private String  perfil;
+    private String  portada;
     private Municipio municipio;
     private Sexo sexo;
+
+
+    public String getPerfil() {
+        return perfil;
+    }
+
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
+    }
+
+    public String getPortada() {
+        return portada;
+    }
+
+    public void setPortada(String portada) {
+        this.portada = portada;
+    }
 
     public long getId() {
         return id;

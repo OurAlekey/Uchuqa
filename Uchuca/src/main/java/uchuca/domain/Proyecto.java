@@ -11,11 +11,21 @@ public class Proyecto {
     private String nombre;
     private String descripcion;
     private Integer idUsuario;
-private List<Imagenes> imagenes;
+    private List<Imagenes> imagenes;
+    private  Usuario usuario;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
 
     public List<Imagenes> getImagenes() {
         return imagenes;
     }
+
 
     public void setImagenes(List<Imagenes> imagenes) {
         this.imagenes = imagenes;
