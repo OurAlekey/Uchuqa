@@ -33,12 +33,10 @@ public class UploadFilesServices implements UploadFilesRep {
         try {
             Optional<Usuario> usuario = Optional.of(new Usuario());
             usuario =  usuerService.getId(Long.valueOf(idUser));
-
-            usuario =  usuerService.getId(Long.valueOf(idUser));
             Imagenes imagenes = new Imagenes();
             String fileName = UUID.randomUUID().toString();
             String  newFileName =  cargarImg(file,fileName+"Portada");
-            usuario.get().setPerfil(newFileName);
+            usuario.get().setPortada(newFileName);
             imagenes.setDescripcion(newFileName);
             imagenes.setIdUserPortada(idUser);
             usuerService.save(usuario.get());
