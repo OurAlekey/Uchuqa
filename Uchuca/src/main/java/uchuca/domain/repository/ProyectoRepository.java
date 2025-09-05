@@ -11,4 +11,10 @@ public interface ProyectoRepository {
     List<Proyecto> getAll();
 
     Proyecto save(Proyecto proyecto);
+
+    List<Proyecto> getAllByTitle(String title);
+
+    List<Proyecto> getByIdUsuario(Integer id);
+
+
 }

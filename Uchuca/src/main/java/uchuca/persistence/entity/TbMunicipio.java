@@ -1,6 +1,8 @@
 package uchuca.persistence.entity;
 
 
+import uchuca.domain.Departamento;
+
 import javax.persistence.*;
 import java.util.List;
 
@@ -18,6 +20,17 @@ public class TbMunicipio {
     @Column(name = "id_departamento", nullable = false)
     private Integer idDepartamento;
 
+    @ManyToOne
+    @JoinColumn(name = "id_departamento",insertable = false,updatable = false)
+    private TbDepartamento departamento;
+
+    public TbDepartamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(TbDepartamento departamento) {
+        this.departamento = departamento;
+    }
 
     public Integer getIdMunicipio() {
         return idMunicipio;

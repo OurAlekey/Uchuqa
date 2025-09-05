@@ -9,14 +9,17 @@ import uchuca.persistence.entity.TbMunicipio;
 
 import java.util.List;
 
-@Mapper(componentModel ="spring")
+@Mapper(componentModel ="spring"
+        ,uses = {
+        DepartamentoMapper.class
+})
 public interface MunicipioMapper {
 
     @Mappings({
             @Mapping(source = "idMunicipio",target = "id"),
             @Mapping(source = "munDescripcion",target = "descripcion"),
             @Mapping(source = "idDepartamento",target = "idDepartamento"),
-
+            @Mapping(source = "departamento",target = "departamento"),
 
     })
     Municipio toMunicipio(TbMunicipio tbMunicipio);

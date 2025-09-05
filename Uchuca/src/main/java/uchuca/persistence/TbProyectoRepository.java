@@ -37,6 +37,17 @@ public class TbProyectoRepository implements ProyectoRepository {
         return mapper.toProyecto(repository.save(tbProyecto));
     }
 
+    @Override
+    public List<Proyecto> getAllByTitle(String title) {
+        List<TbProyecto> tbProyectos = (List<TbProyecto>) repository.findByPrNombreContainingIgnoreCase(title);
+        return mapper.toProyectos(tbProyectos);
+    }
+
+    @Override
+    public List<Proyecto> getByIdUsuario(Integer id) {
+        List<TbProyecto> tbProyectos = (List<TbProyecto>) repository.findByIdUsuario(id);
+        return mapper.toProyectos(tbProyectos);
+    }
 
 
 }

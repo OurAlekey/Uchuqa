@@ -22,6 +22,14 @@ public class ProyectoService {
         return repository.getAll();
     }
 
+    public  List<Proyecto> getByNombre(String nombre){
+        return  repository.getAllByTitle(nombre);
+    }
+
+    public  List<Proyecto> getByUsuarioId(Integer id){
+        return  repository.getByIdUsuario(id);
+    }
+
     public Proyecto save(Proyecto proyecto){
         return  repository.save(proyecto);
     }

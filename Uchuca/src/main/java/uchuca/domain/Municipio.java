@@ -5,6 +5,15 @@ public class Municipio {
     private Integer id;
     private  String descripcion;
     private Integer idDepartamento;
+    private Departamento departamento;
+
+    public Departamento getDepartamento() {
+        return departamento;
+    }
+
+    public void setDepartamento(Departamento departamento) {
+        this.departamento = departamento;
+    }
 
     public Integer getId() {
         return id;

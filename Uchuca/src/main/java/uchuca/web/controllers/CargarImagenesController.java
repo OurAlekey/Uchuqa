@@ -73,7 +73,7 @@ public class CargarImagenesController {
     @ApiOperation(value = "Busca la imagen con el nombre del archivo", authorizations= {@Authorization(value = "JWT")})
 
     public ResponseEntity<Resource> goImage(@PathVariable ("filename") String filename) {
-
+        System.out.print("C:/picture/" + filename);
         String fullPath = "C:/picture/" + filename;
 
         Path imagePath = Paths.get(fullPath);
@@ -85,7 +85,6 @@ public class CargarImagenesController {
                     .header(HttpHeaders.CONTENT_TYPE, MediaType.IMAGE_JPEG_VALUE)
                     .body(resource);
         } else {
-            // Manejar el caso donde la imagen no existe
             return ResponseEntity.notFound().build();
         }
     }

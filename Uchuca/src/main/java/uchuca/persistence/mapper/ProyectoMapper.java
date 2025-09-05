@@ -18,6 +18,7 @@ public interface ProyectoMapper {
             @Mapping(source = "idProyecto", target = "id"),
             @Mapping(source = "prNombre", target = "nombre"),
             @Mapping(source = "prDescripcion", target = "descripcion"),
+            @Mapping(source = "proMonto", target = "precio"),
             @Mapping(source = "idUsuario", target = "idUsuario"),
             @Mapping(source = "imagenes", target = "imagenes"),
             @Mapping(source = "user", target = "usuario")

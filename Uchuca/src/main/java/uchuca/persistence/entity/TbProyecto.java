@@ -24,11 +24,21 @@ public class TbProyecto {
     @Column(name = "id_usuario", nullable = false)
     private Integer idUsuario;
 
+    @Column(name = "pro_monto", nullable = true)
+    private Double proMonto;
     @ManyToOne
     @JoinColumn(name = "id_usuario",insertable = false,updatable = false)
    private  TbUser user;
     @OneToMany(mappedBy = "tbProyecto", cascade = CascadeType.ALL)
     List<TbImagenes> imagenes;
+
+    public Double getProMonto() {
+        return proMonto;
+    }
+
+    public void setProMonto(Double proMonto) {
+        this.proMonto = proMonto;
+    }
 
     public TbUser getUser() {
         return user;

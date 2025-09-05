@@ -14,6 +14,8 @@ public class Proyecto {
     private List<Imagenes> imagenes;
     private  Usuario usuario;
 
+    private Double precio;
+
     public Usuario getUsuario() {
         return usuario;
     }
@@ -61,5 +63,13 @@ public class Proyecto {
 
     public void setIdUsuario(Integer idUsuario){
         this.idUsuario = idUsuario;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
     }
 }
