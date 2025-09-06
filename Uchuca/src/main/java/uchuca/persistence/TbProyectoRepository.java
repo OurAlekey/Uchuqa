@@ -44,8 +44,8 @@ public class TbProyectoRepository implements ProyectoRepository {
     }
 
     @Override
-    public List<Proyecto> getByIdUsuario(Integer id) {
-        List<TbProyecto> tbProyectos = (List<TbProyecto>) repository.findByIdUsuario(id);
+    public List<Proyecto> getByIdUsuario(Integer id ,String nombre) {
+        List<TbProyecto> tbProyectos = (List<TbProyecto>) repository.findByIdUsuarioAndPrNombreContainingIgnoreCase(id,nombre);
         return mapper.toProyectos(tbProyectos);
     }
 

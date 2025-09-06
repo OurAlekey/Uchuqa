@@ -14,7 +14,7 @@ public interface ProyectoRepository {
 
     List<Proyecto> getAllByTitle(String title);
 
-    List<Proyecto> getByIdUsuario(Integer id);
+    List<Proyecto> getByIdUsuario(Integer ida, String nombre);
 
 
 }

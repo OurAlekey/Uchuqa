@@ -53,7 +53,6 @@ public class ProyectoController {
 
     @GetMapping("/nombre")
     public List<Proyecto> getByNombre(@RequestParam(required = false) String nombre){
-        System.out.println(nombre  + "nopmbre");
         if (service.getByNombre(nombre).isEmpty()){
             throw new BussnessNotFountException("NO EXISTEN REGISTROS");
         }else{
@@ -62,12 +61,12 @@ public class ProyectoController {
     }
 
     @GetMapping("/id-usuario/{id}")
-    public List<Proyecto> getByUsuarioId(@PathVariable("id") Integer id){
+    public List<Proyecto> getByUsuarioId(@PathVariable("id")  Integer id, @RequestParam(required = false) String nombre){
 
-        if (service.getByUsuarioId(id).isEmpty()){
+        if (service.getByUsuarioId(id, nombre).isEmpty()){
             throw new BussnessNotFountException("NO EXISTEN REGISTROS");
         }else{
-            return service.getByUsuarioId(id);
+            return service.getByUsuarioId(id, nombre);
         }
     }
 

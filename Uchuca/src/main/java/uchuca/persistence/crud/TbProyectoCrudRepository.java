@@ -8,6 +8,6 @@ import java.util.List;
 public interface TbProyectoCrudRepository extends CrudRepository<TbProyecto, Integer>{
 
 List<TbProyecto> findByPrNombreContainingIgnoreCase(String nombre);
-List<TbProyecto> findByIdUsuario(Integer id);
+List<TbProyecto> findByIdUsuarioAndPrNombreContainingIgnoreCase(Integer id, String nombre);
 
 }
